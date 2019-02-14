@@ -1,0 +1,22 @@
+<div class="book">
+  <div class="card">
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <p class="title is-4"><%= book.title %></p>
+          <p class="subtitle is-6"><%= book.genre %></p>
+        </div>
+      </div>
+
+      <div class="content">
+        <p class="subtitle is-4"><%= book.description %></p>
+      </div>
+    </div>
+  </div>
+  <div class="controls pt2">
+    <% if admin? %>
+      <%= link_to 'Edit', edit_book_path(book), class:"button is-small is-rounded" %>
+      <%= link_to 'Delete', book, method: :delete, data: { confirm: "Are you sure? "}, class:"button is-small is-rounded" %>
+    <% end %>
+  </div>
+</div>
